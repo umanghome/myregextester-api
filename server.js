@@ -54,6 +54,10 @@ function findRegex (body) {
   return found.replace(/<wbr>/g, '');
 }
 
+app.get('/optimize', (request, response) => {
+  response.send('Hello, world');
+})
+
 app.post('/optimize', (request, response) => {
   const {
     regex,
