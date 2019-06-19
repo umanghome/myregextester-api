@@ -34,6 +34,7 @@ function keyMiddleware (request, response, next) {
   next();
 }
 
+app.use(bodyParser.json());
 app.use(keyMiddleware);
 
 const REGEX_REGEX = /<u>Optimized Match Pattern\:<\/u><br \/><span style="color:#000066;">(.*?)<br /;
@@ -96,7 +97,6 @@ app.post('/optimize', (request, response) => {
   });
 });
 
-app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;
