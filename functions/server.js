@@ -63,8 +63,7 @@ app.post('/optimize', (request, response) => {
   } = request.body;
 
   if (!regex) {
-    console.log(request.body);
-    return response.status(400).send(createError('MISSING_PARAMS', JSON.stringify(request.body)));
+    return response.status(400).send(createError('MISSING_PARAMS'));
   }
 
   Request({
