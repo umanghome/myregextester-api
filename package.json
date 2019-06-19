@@ -1,0 +1,19 @@
+{
+  "name": "myregextester-api",
+  "version": "1.0.0",
+  "description": "myregextester.com over REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umanghome/myregextester-api.git"
+  },
+  "author": "umanghome",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/umanghome/myregextester-api/issues"
+  },
+  "homepage": "https://github.com/umanghome/myregextester-api#readme"
+}
