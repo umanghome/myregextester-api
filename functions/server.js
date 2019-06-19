@@ -52,6 +52,10 @@ function findRegex (body) {
   return found.replace(/<wbr>/g, '');
 }
 
+app.get('/', (request, response) => {
+  return response.send('Hey, your key is working!');
+});
+
 app.post('/optimize', (request, response) => {
   const {
     regex,
