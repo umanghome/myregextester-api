@@ -4,6 +4,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const Request = require('request');
+const { hasAccess } = require('../access');
 
 const router = express.Router();
 
@@ -26,8 +27,8 @@ function keyMiddleware (request, response, next) {
     key
   } = request.query;
 
-  if (!key) {
-    return response.send(401);
+  if (!key || !hasAccess(key)) {
+    return response.status(401).send(createError('INVALID_KEY'));
   }
 
   next();
