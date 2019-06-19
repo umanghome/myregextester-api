@@ -7,9 +7,6 @@ const Request = require('request');
 
 const router = express.Router();
 
-app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-
 function createError(code, description) {
   const error = {
     error: {
@@ -100,6 +97,9 @@ app.post('/optimize', (request, response) => {
     }
   });
 });
+
+app.use(bodyParser.json());
+app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;
 module.exports.handler = serverless(app);
