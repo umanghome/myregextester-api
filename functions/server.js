@@ -51,14 +51,6 @@ function findRegex (body) {
   return found.replace(/<wbr>/g, '');
 }
 
-app.get('/', (request, response) => {
-  response.send('Root!');
-});
-
-app.get('/optimize', (request, response) => {
-  response.send('Hello, world');
-})
-
 app.post('/optimize', (request, response) => {
   const {
     regex,
