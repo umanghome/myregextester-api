@@ -4,7 +4,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const Request = require('request');
-const { hasAccess } = require('../access');
+const { hasAccess } = require('./access');
 
 const router = express.Router();
 
